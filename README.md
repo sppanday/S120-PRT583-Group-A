@@ -10,3 +10,23 @@ This is a repository for team A of PRT 583 Project Development Methodology unit 
 |   s315570 |     SUJAN	KAFLE    | 
 | s260598 | SURENDRA PANDAY |
 | s315674 | THESHAN RANATHUNGA MUDIYANSELAGE |
+
+
+
+<h1>Problem</h1>
+
+<p>This software development process involves creating a Library Catalogue application by implementing Object Oriented Programming initially and create a relationship between objects such as order, library employee, book, author and so on.</p>
+<p>Main objective of this project is to understand all data structures in object oriented progreamming such as:</p>
+<ul>
+  <li>Abstraction</li>
+  <li>Inheritance</li>
+  <li>Encapsulation</li>
+  <li>Primitives</li>
+  <li>Control Structure</li>
+  <li>Use Multiple Design Patterns</li>
+  <li>Unit Test Suite</li>
+  <li>Understand and Implement Agile Framework</li>
+  <li>
+</ul>
+
+<li>This unit experiments lot of data structures switch, and find a chain of problem and chain of design pattern</li>
