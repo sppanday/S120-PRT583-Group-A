@@ -26,5 +26,7 @@ This is a repository for team A of PRT 583 Project Development Methodology unit 
   <li>Use Multiple Design Patterns</li>
   <li>Unit Test Suite</li>
   <li>Understand and Implement Agile Framework</li>
+  <li>Extreme Programming</li>
+  <li>Code Review</li>
 </ul>
 <h3>This unit experiments lot of data structures switch, and find a chain of problem and chain of design pattern</h3>
