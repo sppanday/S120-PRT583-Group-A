@@ -2,6 +2,8 @@
 This is a repository for team A of PRT 583 Project Development Methodology unit to collectively work as a part of team on different refactoring concepts. 
 
 <p>Date : 23 / 04 / 2020 </p>
+<p>Due Date for submission: every week from week 7, final project to be submitted on week 11. Solution will be implemented every week.</p>
+
 <strong> Students Names </strong>
 
 | Student ID     | Student Name | 
