@@ -1,5 +1,5 @@
 # S120-PRT583-Group-A
-This is a repository for team A of PRT 583 Project Development Methodology unit team members to collectively work as a part of team on different refactoring concepts. 
+This is a repository for team A of PRT 583 Project Development Methodology unit to collectively work as a part of team on different refactoring concepts. 
 
 <p>Date : 23 / 04 / 2020 </p>
 <strong> Students Names </strong>
