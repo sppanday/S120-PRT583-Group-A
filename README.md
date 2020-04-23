@@ -8,4 +8,4 @@ This is a repository for team A of PRT 583 Project Development Methodology unit 
 |     s317999  |   ANIL CHAUDHARI     |
 |   s315570 |     SUJAN	KAFLE    | 
 | s260598 | SURENDRA PANDAY |
-| s315674 | THESHAN	MUDIYANSELAGE RANATHUNGA |
+| s315674 | THESHAN RANATHUNGA MUDIYANSELAGE |
