@@ -15,22 +15,42 @@ This is a repository for team A of PRT 583 Project Development Methodology unit 
 
 <h1>Proof Of Concept</h1>
 
-<p>This software development process involves creating a Library Catalogue application by implementing Object Oriented Programming initially and create a library catalogue solution for Charles Darwin University. Logic is more of backend side and you could use Java or C# for creation of logic. Lot of objects will be created during this process and they will interact between each other to show it's a library catalogue system. Some of data structure suggested to be implemented are listed as below.</p>
-<p>Main objective of this project is to understand all data structures in object oriented progreamming by using</p>
-<ul>
-  <li>Abstraction</li>
-  <li>Inheritance</li>
-  <li>Encapsulation</li>
-  <li>Primitives</li>
-  <li>Control Structure</li>
-  <li>Use Multiple Design Patterns</li>
-  <li>Unit Test Suite</li>
-  <li>Understand and Implement Agile Framework</li>
-  <li>Extreme Programming</li>
-  <li>Code Review</li>
-</ul>
-<h3>This unit experiments lot of data structures switch, and find a chain of problems on code and experiment different design pattern on code</h3>
-<h1>Solution</h1>
-<p>Solution is to break down big chunk of task into small pieces and work through problem individually every week until next meeting and discusss problems, solution, approachs, blocker, issues and how do we move forward ahead.</p>
-<p>Project requirement could be changed anytime by product owner in given time and during sprint planning, requirement could be updated or earlier before that if this could be communicated with product owner and scrum master.</p>
+<p>This is a software development process where we implement 15 to 16 design patterns using real scenarios individually but work as a group in Agile structure with the feeling that you are working in industry to refactor a codebase.</p>
+<p>Showing your understanding of design pattern is more important than showing a working code in every sprint</p>
+<p>Main objective of this project is to understand Design patterns and refactoring concepts and Agile practices.</p>
 
+<h3>Team members in this group will implement following design patterns</h3>
+<ul>
+  <li>Abstract Factory</li>
+  <li>Builder Pattern</li>
+  <li>Factory Method</li>
+  <li>Prototype</li>
+  <li>Singleton</li>
+  <li>Adapter</li>
+  <li>Bridge</li>
+  <li>Composite</li>
+  <li>Decorator</li>
+  <li>Facade</li>
+  <li>Flyweight</li>
+  <li>Proxy</li>
+  <li>Command</li>
+  <li>Mediator</li>
+  <li>Observer</li>
+  <li>Visitor</li>
+  <li>Template method</li>
+  <li>Strategy</li>
+  <li>State</li>
+</ul>
+<h3>How to work in team ?</h3>
+<p>Every week team members choose 3 to 4 random design patterns every week or in each iteration and work independently and write <strong>Before</strong> and <strong>After</strong> stages of implementing design patterns in your choice of programming language but pseudocode is important than showing working code as that is less of priority for showing competency in design pattern. For design pattern showing ER diagrams as well would be required. Tasks will be posted  in Trello and implementation would be posted in your github repository.</p>
+<p>Create your own branch and do your work and do a push to your branch every week to show your work to Lecturer. Otherwise, you could end up overwriting your code with someone else code unknowningly.</p>
+<p>Team members then can share knowledge of design pattern learnt previously to other team members who will be learning and implementing those design patterns.</p>
+<p>It is suggested to choose a different dissimilar design pattern to that of your peers so that what you learn would be independent but it's not so important to choose a different design pattern necessarily. Sometimes, you could have overlap as well with one of your team members</p>
+<p>You have to come up with your own example to show you have learnt that design pattern</p>
+<p>Please avoid copying from internet as mark will be zero for that case</p>
+
+<h3>Recommended Reading for Design Patterns Implementation</h3>
+
+<h4>You could learn from anyone and anywhere but these are some design pattern books suggested for learning and implementing</h4>
+<h5>Design Patterns By Joshua</h5>
+<h5>Design Patterns By Head First</h5>
