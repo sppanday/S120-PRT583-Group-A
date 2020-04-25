@@ -15,22 +15,31 @@ This is a repository for team A of PRT 583 Project Development Methodology unit 
 
 <h1>Proof Of Concept</h1>
 
-<p>This software development process involves creating a Library Catalogue application by implementing Object Oriented Programming initially and create a library catalogue solution for Charles Darwin University. Logic is more of backend side and you could use Java or C# for creation of logic. Lot of objects will be created during this process and they will interact between each other to show it's a library catalogue system. Some of data structure suggested to be implemented are listed as below.</p>
-<p>Main objective of this project is to understand all data structures in object oriented progreamming by using</p>
+<p>This is a software development process where we implement 15 to 16 design patterns using real life scenario individually but work as a group in Agile structure.</p>
+<p>Main objective of this project is to understand Design patterns and refactoring concepts and Agile practices.</p>
+
+<h3>Project will implement following design patterns</h3>
 <ul>
-  <li>Abstraction</li>
-  <li>Inheritance</li>
-  <li>Encapsulation</li>
-  <li>Primitives</li>
-  <li>Control Structure</li>
-  <li>Use Multiple Design Patterns</li>
-  <li>Unit Test Suite</li>
-  <li>Understand and Implement Agile Framework</li>
-  <li>Extreme Programming</li>
-  <li>Code Review</li>
+  <li>Abstract Factory</li>
+  <li>Builder Pattern</li>
+  <li>Factory Method</li>
+  <li>Prototype</li>
+  <li>Singleton</li>
+  <li>Adapter</li>
+  <li>Bridge</li>
+  <li>Composite</li>
+  <li>Decorator</li>
+  <li>Facade</li>
+  <li>Flyweight</li>
+  <li>Proxy</li>
+  <li>Command</li>
+  <li>Mediator</li>
+  <li>Observer</li>
+  <li>Visitor</li>
+  <li>Template method</li>
+  <li>Strategy</li>
+  <li>State</li>
 </ul>
-<h3>This unit experiments lot of data structures switch, and find a chain of problems on code and experiment different design pattern on code</h3>
-<h1>Solution</h1>
-<p>Solution is to break down big chunk of task into small pieces and work through problem individually every week until next meeting and discusss problems, solution, approachs, blocker, issues and how do we move forward ahead.</p>
-<p>Project requirement could be changed anytime by product owner in given time and during sprint planning, requirement could be updated or earlier before that if this could be communicated with product owner and scrum master.</p>
+<h3>Purpose </h3>
+
 
