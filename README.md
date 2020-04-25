@@ -40,6 +40,9 @@ This is a repository for team A of PRT 583 Project Development Methodology unit 
   <li>Strategy</li>
   <li>State</li>
 </ul>
-<h3>Purpose </h3>
-
-
+<h3>How to work in team ?</h3>
+<p>Every week team members choose 3 to 4 random design patterns and work independently and write <strong>Before</strong> and <strong>After</strong>stages of implementing design patterns.</p>
+<p>Team members then can share knowledge of design pattern learnt previously to other team members who will be learning and implementing those design patterns.</p>
+<p>It is suggested to choose a different dissimilar design pattern to that of your peers so that what you learn would be independent but it's not so important to choose a different design pattern necessarily. Sometimes, you could have overlap as well with one of your team members</p>
+<p>You have to come up with your own example to show you have learnt that design pattern</p>
+<p>Please avoid copying from internet as mark will be zero for that case</p>
