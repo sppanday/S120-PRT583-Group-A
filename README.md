@@ -42,7 +42,8 @@ This is a repository for team A of PRT 583 Project Development Methodology unit 
   <li>State</li>
 </ul>
 <h3>How to work in team ?</h3>
-<p>Every week team members choose 3 to 4 random design patterns and work independently and write <strong>Before</strong> and <strong>After</strong> stages of implementing design patterns.</p>
+<p>Every week team members choose 3 to 4 random design patterns every week or in each iteration and work independently and write <strong>Before</strong> and <strong>After</strong> stages of implementing design patterns in your choice of programming language but pseudocode is important than showing working code as that is less of priority for showing competency in design pattern. For design pattern showing ER diagrams as well would be required. Tasks will be posted  in Trello and implementation would be posted in your github repository.</p>
+<p>Create your own branch and do your work and do a push to your branch every week to show your work to Lecturer. Otherwise, you could end up overwriting your code with someone else code unknowningly.</p>
 <p>Team members then can share knowledge of design pattern learnt previously to other team members who will be learning and implementing those design patterns.</p>
 <p>It is suggested to choose a different dissimilar design pattern to that of your peers so that what you learn would be independent but it's not so important to choose a different design pattern necessarily. Sometimes, you could have overlap as well with one of your team members</p>
 <p>You have to come up with your own example to show you have learnt that design pattern</p>
