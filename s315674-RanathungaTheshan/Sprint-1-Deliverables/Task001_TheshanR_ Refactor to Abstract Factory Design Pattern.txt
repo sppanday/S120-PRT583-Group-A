@@ -1,0 +1,60 @@
+// Design without factory pattern 
+
+
+class Animal { 
+public: 
+	printAnimal() = 0; 
+}; 
+class TwoLegs : public Animal { 
+public: 
+	void printAnimal() { 
+		"I have two legs"; 
+	} 
+}; 
+class FourLegs : public Animal { 
+	public: 
+	void printAnimal() { 
+		" I have four legs":
+	} 
+}; 
+
+// Tester class 
+
+class Tester { 
+public: 
+	Tester() { 
+
+		// Tester explicitly creates classes according to type 
+
+		if (type == 1) 
+			pAnimal = new TwoLegs(); 
+		else if (type == 2) 
+			pAnimal = new FourLegs(); 
+		else
+			pAnimal = NULL; 
+	} 
+
+	Tester() { 
+		if (pAnimal) 
+		{ 
+			delete[] pAnimal; 
+			pAnimal = NULL; 
+		} 
+	} 
+
+	Animal* getAnimal() { 
+		return pAnimal; 
+	} 
+private: 
+	Animal *pAnimal; 
+}; 
+
+//Driver program 
+
+ main() { 
+	
+Tester *pTester = new Tester(1); 
+	Animal * pAnimal = pTester->getAnimal(); 
+	pAnimal->printAnimal(); 
+	return 0; 
+}
