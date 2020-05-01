@@ -1,0 +1,74 @@
+AnimalType { 
+    AT_TwoLegs,    AT_FourLegs,    AT_EightLegs 
+}; 
+  
+
+class Animal { 
+public: 
+    void printAnimal() = 0; 
+    static Animal* Create(AnimalType type); 
+}; 
+class TwoLegs : public Animal { 
+public: 
+    void printAnimal() { 
+        "I Have two Legs"; 
+    } 
+}; 
+class FourLegs : public Animal { 
+public: 
+    void printAnimal() { 
+        "I have four legs"; 
+    } 
+}; 
+class EightLegs : public Animal { 
+    public: 
+    void printAnimal() { 
+        "I have Eight Legs”; 
+    } 
+}; 
+  
+// Factory method to create objects of different types. 
+// Change is required only in this function to create a new object type 
+Animal* Animal::Create(AnimalType type) { 
+    if (type == AT_TwoLegs) 
+        return new TwoLegs(); 
+    else if (type == AT_FourLegs) 
+        return new FourLegs(); 
+    else if (type == AT_EightLegs) 
+        return new EightLegs(); 
+    else return NULL; 
+} 
+  
+// Client class 
+class Client { 
+public: 
+  
+    // Client doesn't explicitly create objects 
+    // but passes type to factory method "Create()" 
+    Client() 
+    { 
+        AnimalType type = AT_FourLegs; 
+        pAnimal = Animal::Create(type); 
+    } 
+    ~Client() { 
+        if (pAnimal) { 
+            delete[] pAnimal; 
+            pAnimal = NULL; 
+        } 
+    } 
+    Animal* getAnimal()  { 
+        return pAnimal; 
+    } 
+  
+private: 
+    Animal *pAnimal; 
+}; 
+  
+// Driver program 
+int main() { 
+    Client *pClient = new Client(); 
+    Animal * pAnimal = pClient->getAnimal(); 
+    pAnimal->printAnimal(); 
+    return 0; 
+} 
+
