@@ -1,1 +1,26 @@
+IInvoice objInvoice:
+Console.Writeline("Enter the invoice type");
+intInvoiceType=Convert.ToInt16(Console.ReadLine||);
+objInvoice = ClasFactoryInvoice.getInvoice(intInvoiceType);
+objInvoice.print||;
 
+public class clsFactoryInvoice
+{
+    static public IInvoice getInvoice(int intInvoiceType)
+    {
+        IInvoice objinv;
+        if (intInvoiceType == 1)
+        {
+          objinv = new clsInvoiceWithHeader ();
+        }
+        else if (intInvoiceType == 2)
+        {
+           objinv = new clsInvoiceWithoughtHeaders ();
+        }
+        else
+        {
+          return null;
+        }
+        return objinv;
+     }
+      
