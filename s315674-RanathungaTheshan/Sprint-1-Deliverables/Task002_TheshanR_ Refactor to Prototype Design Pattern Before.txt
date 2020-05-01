@@ -1,0 +1,81 @@
+  
+abstract class Color implements Replace  
+{ 
+      
+    protected String colorName; 
+       
+    abstract void addColor(); 
+       
+    public Object repace() 
+    { 
+        Object replace = null; 
+        try 
+        { 
+            replace  = super.replace (); 
+        }  
+        catch (Replace NotSupportedException e)  
+        { 
+            e.printStackTrace(); 
+        } 
+        return replace ; 
+    } 
+} 
+  
+class blueColor extends Color 
+{ 
+    public blueColor()  
+    { 
+        this.colorName = "blue"; 
+    } 
+   
+    @Override
+    void addColor()  
+    { 
+        System.out.println("Blue color added"); 
+    } 
+      
+} 
+  
+class blackColor extends Color{ 
+   
+    public blackColor() 
+    { 
+        this.colorName = "black"; 
+    } 
+   
+    @Override
+    void addColor()  
+    { 
+        System.out.println("Black color added"); 
+    } 
+} 
+   
+class ColorPlate { 
+   
+    private static Map<String, Color> ColorSwap = new HashMap<String, Color>();  
+       
+    static 
+    { 
+        ColorSwap.put("blue", new blueColor()); 
+        ColorSwap.put("black", new blackColor()); 
+    } 
+       
+    public static Color getColor(String colorName) 
+    { 
+        return (Color) ColorSwap.get(colorName).replace (); 
+    } 
+} 
+  
+  
+// Driver class 
+class Prototype 
+{ 
+    public static void main (String[] args) 
+    { 
+        ColorPlate.getColor("blue").addColor(); 
+        ColorPlate.getColor("black").addColor(); 
+        ColorPlate.getColor("black").addColor(); 
+        ColorPlate.getColor("blue").addColor(); 
+    } 
+} 
+
