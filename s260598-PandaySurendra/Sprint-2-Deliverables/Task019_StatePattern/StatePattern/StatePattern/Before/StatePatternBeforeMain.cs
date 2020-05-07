@@ -1,4 +1,5 @@
 ﻿using System;
+using StatePattern.Before;
 
 namespace StatePattern
 {
@@ -6,7 +7,12 @@ namespace StatePattern
     {
         public static void Main(string[] args)
         {
-         
+            EftposMachineBefore eftpos = new EftposMachineBefore();
+
+            eftpos.insertPaymentType();
+            eftpos.PaymentDeclined();
+            eftpos.PaymentCompleted();
+            eftpos.GiveChange();
         }
     }
 }
