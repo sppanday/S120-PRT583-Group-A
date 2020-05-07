@@ -12,25 +12,31 @@
                 string dependencyScanURL = 'www.dependencyscanserver.com';
                 string request;
          
+         
                 
+                    
+                   
                 public static string username;
-                public static string password;
-                public static DownloadServer download = new DownloadServer();
+                public static string password; 
+                public Boolean checkVulnerability = false;
+                public Boolean hasVulnerability = true;
+              
+              public static DownloadServer download = new DownloadServer();
 
             public ProxyServer()
                 {
                 }
                 public string getRequestURL()
                 {
-                    if (request == 'nugget')
+                    if (request == 'nugget') // download nugget packages
                     {
                         return this.requestURL1;
-                    } else if (request == 'maven')
+                    } else if (request =='maven')
                 {
-                    return this.requestURL2;
+                    return this.requestURL2;  // download node packages
                 } else
                 {
-                    return this.requestURL3;
+                    return this.requestURL3; // download maven packages
                 }
                 }
 
@@ -45,25 +51,32 @@
                 public string checkVulnerability()
                 {
                     // lets assume that packages are scanned through a request to server
-                    Boolean noVulnerability = true;
-                    Boolean checkVulnerability = false;
-                    
-                    if (noVulnerability)
+                   
+                    if (hasVulnerability)
                     {
                         this.grantAccess();
-                    } else if
+                    } else if (!this.hasVulnerability())
                     {
                         Console.WriteLine('Permission denied for access to packages..');
                         throw new Exception();
+                        
                     } else
             {
                 return null;
             }
                 }
-                private string redirectDownload() 
+                
+
+    // redirect request to either download server or throw error and inform
+    // user that vulnerability exists in scanned dependency
+
+    private string RedirectDownload()  
+           
                 {
 
             var download = new DownloadServer();
+
+          
             return download.redirectRequest();
                 }
             }
