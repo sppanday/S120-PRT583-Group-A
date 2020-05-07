@@ -39,6 +39,7 @@
     <Compile Include="After\MachineState.cs" />
     <Compile Include="After\HasCardState.cs" />
     <Compile Include="After\HasCashState.cs" />
+    <Compile Include="Before\EftposMachineBefore.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Before\" />
