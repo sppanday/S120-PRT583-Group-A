@@ -1,1 +1,97 @@
+abstract class Command is
+    protected field app: Application
+    protected field editor: Editor
+    protected field backup: text
 
+    constructor Command(app: Application, editor: Editor) is
+        this.app = app
+        this.editor = editor
+    method saveBackup() is
+        backup = editor.text
+    method undo() is
+        editor.text = backup
+
+    abstract method execute()
+
+class CopyCommand extends Command is
+    method execute() is
+        app.clipboard = editor.getSelection()
+        return false
+
+class CutCommand extends Command is
+    method execute() is
+        saveBackup()
+        app.clipboard = editor.getSelection()
+        editor.deleteSelection()
+        return true
+
+class PasteCommand extends Command is
+    method execute() is
+        saveBackup()
+        editor.replaceSelection(app.clipboard)
+        return true
+
+// The undo operation is also a command.
+class UndoCommand extends Command is
+    method execute() is
+        app.undo()
+        return false
+
+
+// The global command history is just a stack.
+class CommandHistory is
+    private field history: array of Command
+
+    // Last in...
+    method push(c: Command) is
+        // Push the command to the end of the history array.
+
+    // ...first out
+    method pop():Command is
+
+class Editor is
+    field text: string
+
+    method getSelection() is
+        // Return selected text.
+
+    method deleteSelection() is
+        // Delete selected text.
+
+    method replaceSelection(text) is
+
+class Application is
+    field clipboard: string
+    field editors: array of Editors
+    field activeEditor: Editor
+    field history: CommandHistory
+
+    method createUI() is
+        copy = function() { executeCommand(
+            new CopyCommand(this, activeEditor)) }
+        copyButton.setCommand(copy)
+        shortcuts.onKeyPress("Ctrl+C", copy)
+
+        cut = function() { executeCommand(
+            new CutCommand(this, activeEditor)) }
+        cutButton.setCommand(cut)
+        shortcuts.onKeyPress("Ctrl+X", cut)
+
+        paste = function() { executeCommand(
+            new PasteCommand(this, activeEditor)) }
+        pasteButton.setCommand(paste)
+        shortcuts.onKeyPress("Ctrl+V", paste)
+
+        undo = function() { executeCommand(
+            new UndoCommand(this, activeEditor)) }
+        undoButton.setCommand(undo)
+        shortcuts.onKeyPress("Ctrl+Z", undo)
+
+    method executeCommand(command) is
+        if (command.execute)
+            history.push(command)
+
+    method undo() is
+        command = history.pop()
+        if (command != null)
+            command.undo()
