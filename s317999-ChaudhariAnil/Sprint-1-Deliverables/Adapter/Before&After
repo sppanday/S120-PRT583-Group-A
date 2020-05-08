@@ -1,82 +1,49 @@
 
-// Java implementation of Adapter pattern 
+class RoundHole is
+    constructor RoundHole(radius) { ... }
 
-interface Bird 
-{ 
-	// birds implement Bird interface that allows 
-	// them to fly and make sounds adaptee interface 
-	public void fly(); 
-	public void makeSound(); 
-} 
+    method getRadius() is
+        // Return the radius of the hole.
 
-class Sparrow implements Bird 
-{ 
-	// a concrete implementation of bird 
-	public void fly() 
-	{ 
-		System.out.println("Flying"); 
-	} 
-	public void makeSound() 
-	{ 
-		System.out.println("Chirp Chirp"); 
-	} 
-} 
+    method fits(peg: RoundPeg) is
+        return this.getRadius() >= peg.radius()
 
-interface ToyDuck 
-{ 
-	// target interface 
-	// toyducks dont fly they just make 
-	// squeaking sound 
-	public void squeak(); 
-} 
+class RoundPeg is
+    constructor RoundPeg(radius) { ... }
 
-class PlasticToyDuck implements ToyDuck 
-{ 
-	public void squeak() 
-	{ 
-		System.out.println("Squeak"); 
-	} 
-} 
+    method getRadius() is
+        // Return the radius of the peg.
 
-class BirdAdapter implements ToyDuck 
-{ 
-	// You need to implement the interface your 
-	// client expects to use. 
-	Bird bird; 
-	public BirdAdapter(Bird bird) 
-	{ 
-		// we need reference to the object we 
-		// are adapting 
-		this.bird = bird; 
-	} 
 
-	public void squeak() 
-	{ 
-		// translate the methods appropriately 
-		bird.makeSound(); 
-	} 
-} 
+// But there's an incompatible class: SquarePeg.
+class SquarePeg is
+    constructor SquarePeg(width) { ... }
 
-class Main 
-{ 
-	public static void main(String args[]) 
-	{ 
-		Sparrow sparrow = new Sparrow(); 
-		ToyDuck toyDuck = new PlasticToyDuck(); 
+    method getWidth() is
+        // Return the square peg width.
 
-		// Wrap a bird in a birdAdapter so that it 
-		// behaves like toy duck 
-		ToyDuck birdAdapter = new BirdAdapter(sparrow); 
+class SquarePegAdapter extends RoundPeg is
+   
+    private field peg: SquarePeg
 
-		System.out.println("Sparrow..."); 
-		sparrow.fly(); 
-		sparrow.makeSound(); 
+    constructor SquarePegAdapter(peg: SquarePeg) is
+        this.peg = peg
 
-		System.out.println("ToyDuck..."); 
-		toyDuck.squeak(); 
+    method getRadius() is
 
-		// toy duck behaving like a bird 
-		System.out.println("BirdAdapter..."); 
-		birdAdapter.squeak(); 
-	} 
-} 
+        return peg.getWidth() * Math.sqrt(2) / 2
+
+
+// Somewhere in client code.
+hole = new RoundHole(5)
+rpeg = new RoundPeg(5)
+hole.fits(rpeg) // true
+
+small_sqpeg = new SquarePeg(5)
+large_sqpeg = new SquarePeg(10)
+hole.fits(small_sqpeg) // this won't compile (incompatible types)
+
+small_sqpeg_adapter = new SquarePegAdapter(small_sqpeg)
+large_sqpeg_adapter = new SquarePegAdapter(large_sqpeg)
+hole.fits(small_sqpeg_adapter) // true
+hole.fits(large_sqpeg_adapter) // false
