@@ -13,7 +13,7 @@ namespace PizzaHouseIteratorPattern.Before
         PizzaHouseNonVegMenuItems[] pizzaMenuItems;
         public PizzaHouseNonVegMenu()
         {
-            pizzaMenuItems = new PizzaHouseNonVegMenuItems(MAX_ITEMS);
+            PizzaMenuItems = new PizzaHouseNonVegMenuItems(MAX_ITEMS);
 
             // list of non vegetarian pizzas 
 
@@ -23,22 +23,24 @@ namespace PizzaHouseIteratorPattern.Before
             addPizzaMenuItem("Garlic Chicken and Bacon Ranch", "Succulent chicken, crispy rasher bacon, Spinach, Red Onions", false, 7.95);
         }
 
+        public PizzaHouseNonVegMenuItems[] PizzaMenuItems { get => pizzaMenuItems; set => pizzaMenuItems = value; }
+
         public void addPizzaMenuItem(String name, String description, Boolean vegetarian, double price)
         {
-             pizzaMenuItems = new PizzaHouseNonVegMenuItems(name, description, vegetarian, price);
+             PizzaMenuItems = new PizzaHouseNonVegMenuItems(name, description, vegetarian, price);
             if (numberOfPizzaIems >= MAX_ITEMS)
             {
                 Console.WriteLine("Sorry, menu is full! Can't add pizza items to menu");
             } else
             {
-                pizzaMenuItems(numberOfPizzaIems) = pizzaMenuItems;
+                PizzaMenuItems(numberOfPizzaIems) = PizzaMenuItems;
                 numberOfPizzaIems = numberOfPizzaIems + 1;
             }
         }
         //  returns an array of non veg pizza menu items
         public PizzaHouseNonVegMenuItems[] getPizzaMenuItems()
         {
-            return pizzaMenuItems;
+            return PizzaMenuItems;
         }
 
         // other methods

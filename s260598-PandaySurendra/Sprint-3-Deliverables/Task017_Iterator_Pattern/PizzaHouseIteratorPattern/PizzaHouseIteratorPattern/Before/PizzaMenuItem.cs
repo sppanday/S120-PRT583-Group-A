@@ -8,7 +8,7 @@ namespace PizzaHouseIteratorPattern.Before
         // passing two types of objects
         PizzaHouseNonVegMenu pizzaHouseNonVeg;
         PizzaHouseVegetarianMenu pizzaHouseVegetarianMenu;
-        // parameters for passing pizza items ( not necessary, just for fun)
+        // parameters for passing pizza items ( not necessary, not used)
         public string pizzaName;
         public string description;
         public bool vegetarian;

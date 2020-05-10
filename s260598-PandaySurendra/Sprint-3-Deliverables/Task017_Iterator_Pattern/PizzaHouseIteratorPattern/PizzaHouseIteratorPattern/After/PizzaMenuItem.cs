@@ -3,13 +3,19 @@ namespace PizzaHouseIteratorPattern.After
 {
     public class PizzaMenuItem
     {
-        PizzaHouseAfter pizzaHouseNonVeg;
-        PizzaNonvegetarianMenu pizzaHouseVegetarianMenu;
-        public PizzaMenuItem(PizzaHouseAfter pizzaHouseNonVeg,
-            PizzaNonvegetarianMenu pizzaHouseVegetarianMenu)
+        PizzaNonvegMenu pizzaHouseNonVeg;
+        PizzaVegMenuItems pizzaHouseVegetarianMenu;
+        public PizzaMenuItem(PizzaNonvegMenu pizzaHouseNonVeg,
+        PizzaVegMenuItems pizzaHouseVegetarianMenu)
         {
             this.pizzaHouseNonVeg = pizzaHouseNonVeg;
             this.pizzaHouseVegetarianMenu = pizzaHouseVegetarianMenu;
+        }
+
+        public void printPizzaMenu()
+        {
+            PizzaMenuIterator vegMenuIterator = pizzaHouseNonVeg.createIterator();
+            PizzaMenuIterator nonvegMenuIterator = pizzaHouseVegetarianMenu.createIterator();
         }
     }
 }

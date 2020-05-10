@@ -41,8 +41,9 @@
     <Compile Include="After\PizzaVegMenuIterator.cs" />
     <Compile Include="After\PizzaMenuIterator.cs" />
     <Compile Include="After\PizzaNonvegMenuIterator.cs" />
-    <Compile Include="After\NonVegPizzaMenuAfter.cs" />
     <Compile Include="After\PizzaMenuItem.cs" />
+    <Compile Include="After\PizzaVegMenuItems.cs" />
+    <Compile Include="After\PizzaNonvegMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Before\" />

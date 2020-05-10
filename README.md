@@ -37,6 +37,8 @@ This is a repository for team A of PRT 583 Project Development Methodology unit 
   <li>Mediator</li>
   <li>Observer</li>
   <li>Visitor</li>
+  <li>Iterator</li>
+  <li>Chain of Responsibility</li>
   <li>Template method</li>
   <li>Strategy</li>
   <li>State</li>

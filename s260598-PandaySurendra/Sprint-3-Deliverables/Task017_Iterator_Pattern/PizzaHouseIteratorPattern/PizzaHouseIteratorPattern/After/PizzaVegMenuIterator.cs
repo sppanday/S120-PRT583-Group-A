@@ -3,21 +3,21 @@ namespace PizzaHouseIteratorPattern.After
 {
     public class PizzaVegMenuIterator: PizzaMenuIterator
     {
-        public PizzaMenuItems[] pizzaMenuItems;
+        public PizzaVegMenuItems[] pizzaMenuItems;
         int position = 0;
 
         public PizzaVegMenuIterator()
         {
         }
 
-        public PizzaVegMenuIterator(PizzaMenuItems[] pizzaMenuItems)
+        public PizzaVegMenuIterator(PizzaVegMenuItems[] pizzaMenuItems)
         {
             this.pizzaMenuItems = pizzaMenuItems;
         }
 
         public Object NextPizzaItem()
         {
-            PizzaMenuItems pizzaMenuItems = pizzaMenuItems[position];
+            PizzaVegMenuItems pizzaMenuItems = pizzaMenuItems[position];
             position = position + 1;
             return pizzaMenuItems;
         }

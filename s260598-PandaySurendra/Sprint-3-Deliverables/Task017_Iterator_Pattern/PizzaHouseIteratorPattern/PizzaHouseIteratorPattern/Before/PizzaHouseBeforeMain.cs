@@ -19,14 +19,16 @@ namespace PizzaHouseIteratorPattern.Before
 
             foreach(var vegItem in vegItems)
             {
-                Console.WriteLine(vegItem); // print all veg items from menu
+                // print all veg items from menu
+                Console.WriteLine(vegItem); 
             }
 
             // looping through non veg menu and print all non veg items
 
             foreach(var nonVegItem in nonVegItems)
             {
-                Console.WriteLine(nonVegItem); // print all non veg items from menu
+                // print all non veg items from menu
+                Console.WriteLine(nonVegItem);
             }
 
             // print both
