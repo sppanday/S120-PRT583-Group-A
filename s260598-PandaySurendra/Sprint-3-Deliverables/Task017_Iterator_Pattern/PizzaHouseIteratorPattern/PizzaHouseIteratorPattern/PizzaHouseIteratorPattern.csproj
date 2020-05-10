@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{E936F977-255E-472C-852E-F588BDF7F3BE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PizzaHouseIteratorPattern</RootNamespace>
+    <AssemblyName>PizzaHouseIteratorPattern</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Before\PizzaHouseBeforeMain.cs" />
+    <Compile Include="After\PizzaHouseAfterMain.cs" />
+    <Compile Include="Before\PizzaHouseVegetarianMenu.cs" />
+    <Compile Include="Before\PizzaHouseNonVegMenu.cs" />
+    <Compile Include="Before\PizzaMenuItem.cs" />
+    <Compile Include="After\PizzaVegMenuIterator.cs" />
+    <Compile Include="After\PizzaMenuIterator.cs" />
+    <Compile Include="After\PizzaNonvegMenuIterator.cs" />
+    <Compile Include="After\NonVegPizzaMenuAfter.cs" />
+    <Compile Include="After\PizzaMenuItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Before\" />
+    <Folder Include="After\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
