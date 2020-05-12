@@ -8,7 +8,7 @@ namespace ChainOfResponsibility.After
         {
             this.processRequest = processRequest;
         }
-        public char ProcessDataInsert(Request request)
+        public string ProcessDataInsert(Request request)
         {
             if (request.getRequest().Contains('UPDATE'))
             {

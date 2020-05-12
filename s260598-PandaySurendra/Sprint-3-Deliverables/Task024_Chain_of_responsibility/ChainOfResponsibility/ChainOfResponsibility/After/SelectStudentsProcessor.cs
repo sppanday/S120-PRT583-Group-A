@@ -10,11 +10,11 @@ namespace ChainOfResponsibility.After
             this.processRequest = processRequest;
         }
 
-        public void processDataSelect(Request request)
+        public string processDataSelect(Request request)
         {
             if (request.getRequest().Contains('SELECT'))
             {
-                return 'SELECT STUDENTS_ID FROM STUDENT_DATABASE WHERE STUDENTS.ID > 0';
+                return 'SELECT STUDENTS_ID FROM STUDENT_DATABASE WHERE STUDENTS.ID';
             }
         }
 

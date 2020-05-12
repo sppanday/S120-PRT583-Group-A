@@ -8,7 +8,7 @@ namespace ChainOfResponsibility.After
             super(studentDataProcessor);
         }
 
-        public InsertStudentsProcessor processDataInsert(Request request)
+        public string processDataInsert(Request request)
         {
             if (request.getRequest().Contains('INSERT'))
             {
