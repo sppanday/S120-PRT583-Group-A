@@ -1,77 +1,97 @@
+ 
+class CricketData 
+{ 
+	int runs, wickets; 
+	float overs; 
+	CurrentScoreDisplay currentScoreDisplay; 
+	AverageScoreDisplay averageScoreDisplay; 
 
-abstract class Observer {
-    protected Subject subject;
-    public abstract void update();
-}
+	public CricketData(CurrentScoreDisplay currentScoreDisplay, 
+					AverageScoreDisplay averageScoreDisplay) 
+	{ 
+		this.currentScoreDisplay = currentScoreDisplay; 
+		this.averageScoreDisplay = averageScoreDisplay; 
+	} 
 
-class Subject {
-    private List<Observer> observers = new ArrayList<>();
-    private int state;
+	private int getLatestRuns() 
+	{ 
+		return 90; 
+	} 
 
-    public void add(Observer o) {
-        observers.add(o);
-    }
+	private int getLatestWickets() 
+	{ 
+		
+		return 2; 
+	} 
 
-    public int getState() {
-        return state;
-    }
+	private float getLatestOvers() 
+	{ 
+		return (float)10.2; 
+	} 
+	public void dataChanged() 
+	{ 
+		runs = getLatestRuns(); 
+		wickets = getLatestWickets(); 
+		overs = getLatestOvers(); 
 
-    public void setState(int value) {
-        this.state = value;
-        execute();
-    }
+		currentScoreDisplay.update(runs,wickets,overs); 
+		averageScoreDisplay.update(runs,wickets,overs); 
+	} 
+} 
 
-    private void execute() {
-        for (Observer observer : observers) {
-            observer.update();
-        }
-    }
-}
+class AverageScoreDisplay 
+{ 
+	private float runRate; 
+	private int predictedScore; 
 
-class HexObserver extends Observer {
-    public HexObserver(Subject subject) {
-        this.subject = subject;
-        this.subject.add(this);
-    }
+	public void update(int runs, int wickets, float overs) 
+	{ 
+		this.runRate = (float)runs/overs; 
+		this.predictedScore = (int) (this.runRate * 50); 
+		display(); 
+	} 
 
-    public void update() {
-        System.out.print(" " + Integer.toHexString(subject.getState()));
-    }
-}
+	public void display() 
+	{ 
+		System.out.println("\nAverage Score Display:\n" + 
+						"Run Rate: " + runRate + 
+						"\nPredictedScore: " + predictedScore); 
+	} 
+} 
+class CurrentScoreDisplay 
+{ 
+	private int runs, wickets; 
+	private float overs; 
 
-class OctObserver extends Observer {
-    public OctObserver(Subject subject) {
-        this.subject = subject;
-        this.subject.add( this );
-    }
+	public void update(int runs,int wickets,float overs) 
+	{ 
+		this.runs = runs; 
+		this.wickets = wickets; 
+		this.overs = overs; 
+		display(); 
+	} 
 
-    public void update() {
-        System.out.print(" " + Integer.toOctalString(subject.getState()));
-    }
-}
+	public void display() 
+	{ 
+		System.out.println("\nCurrent Score Display: \n" + 
+						"Runs: " + runs +"\nWickets:"
+						+ wickets + "\nOvers: " + overs ); 
+	} 
+} 
 
-class BinObserver extends Observer {
-    public BinObserver(Subject subject) {
-        this.subject = subject;
-        this.subject.add(this);
-    }
+class Main 
+{ 
+	public static void main(String args[]) 
+	{ 
+		AverageScoreDisplay averageScoreDisplay = 
+									new AverageScoreDisplay(); 
+		CurrentScoreDisplay currentScoreDisplay = 
+									new CurrentScoreDisplay(); 
+ 
+		CricketData cricketData = new CricketData(currentScoreDisplay, 
+												averageScoreDisplay); 
 
-    public void update() {
-        System.out.print(" " + Integer.toBinaryString(subject.getState()));
-    }
-}
 
-public class ObserverDemo {
-    public static void main( String[] args ) {
-        Subject sub = new Subject();
-        // Client configures the number and type of Observers
-        new HexObserver(sub);
-        new OctObserver(sub);
-        new BinObserver(sub);
-        Scanner scan = new Scanner(System.in);
-        for (int i = 0; i < 5; i++) {
-            System.out.print("\nEnter a number: ");
-            sub.setState(scan.nextInt());
-        }
-    }
-}
+		cricketData.dataChanged(); 
+	} 
+} 
