@@ -1,0 +1,38 @@
+public interface DominosOrderVisitor {
+	public void visit(Order order);
+	public void visit(Pizza pizza);
+	public void visit(Garlicbread garlicbread);
+	public void visit(Drinks drinks);
+	
+}
+
+public class OnlineOrderDisplayVisitor implements DominosOrderVisitor {
+
+   @Override
+   public void visit(Order order) {
+      System.out.println("Displaying Order.");
+   }
+
+   @Override
+   public void visit(Pizza pizza) {
+      System.out.println("Displaying Pizza.");
+   }
+
+   @Override
+   public void visit(Garlicbread garlicbread) {
+      System.out.println("Displaying Garlicbread.");
+   }
+
+   @Override
+   public void visit(Drinks drinks) {
+      System.out.println("Displaying Drinks.");
+   }
+}
+
+public class VisitorPatternDemo {
+   public static void main(String[] args) {
+
+      DominosOrder order = new Order();
+      order.accept(new OnlineOrderDisplayVisitor());
+   }
+}
