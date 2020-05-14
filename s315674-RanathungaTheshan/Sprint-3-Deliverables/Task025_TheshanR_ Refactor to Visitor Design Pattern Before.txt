@@ -1,0 +1,46 @@
+public interface DominosOrder {
+   public void accept(DominosOrderVisitor DominosOrderVisitor);
+}
+
+public class Pizza implements DominosOrder {
+
+   @Override
+   public void accept(DominosOrderVisitor DominosOrderVisitor) {
+      DominosOrderVisitor.visit(this);
+   }
+}
+
+public class Garlicbread implements DominosOrder {
+
+   @Override
+   public void accept(DominosOrderVisitor DominosOrderVisitor) {
+      DominosOrderVisitor.visit(this);
+   }
+}
+
+public class Drinks implements DominosOrder {
+
+   @Override
+   public void accept(DominosOrderVisitor DominosOrderVisitor) {
+      DominosOrderVisitor.visit(this);
+   }
+}
+
+
+public class Order implements DominosOrder {
+	
+   DominosOrder[] parts;
+
+   public Order(){
+      parts = new DominosOrder[] {new Drinks(), new Pizza(), new Garlicbread()};		
+   } 
+
+
+   @Override
+   public void accept(DominosOrderVisitor DominosOrderVisitor) {
+      for (int i = 0; i < parts.length; i++) {
+         parts[i].accept(DominosOrderVisitor);
+      }
+      DominosOrderVisitor.visit(this);
+   }
+}
