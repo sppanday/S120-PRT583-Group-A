@@ -1,1 +1,112 @@
+public class BaseEntiy{
+private Long id;
+public Long getId() {
+return id;
+}
+public void setId(String id) {
 
+this.id = id;
+
+}
+
+}
+public class Student extends BaseEntiy{
+private String name;
+
+
+public String getName() {
+
+return name; {
+
+}
+
+public void setName(String name) {
+
+this.name = name;
+
+}
+
+}
+interface StorageRepository{
+    public void store(BaseEntiy entiy);
+}
+class FileRepository implements StorageRepository{
+public void store(BaseEntiy entiy){
+
+try {
+
+FileOutputStream fileOut = new FileOutputStream(“filePath”);
+
+
+ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+
+
+objectOut.writeObject(entiy);
+
+objectOut.close();
+
+} catch (IOException e) {
+
+e.printStackTrace();
+
+}
+
+}
+
+}	class DataBaseRepository implements StorageRepository{
+public void store(BaseEntiy entiy){
+
+EntityTransaction tx = getEntityManager().getTransaction();
+
+
+try {
+
+tx.begin();
+
+getEntityManager().persist(entiy);
+
+tx.commit();
+
+} catch (Exception ex) {
+
+if (tx.isActive()) {
+
+tx.rollback();
+}
+}
+}
+}
+interface BaseRepository{
+    public void save(BaseEntiy entiy);
+    public StorageRepository getRepository();
+} 
+
+class StudentRepository implements BaseRepository {
+
+    private StorageRepository repository;
+    public StudentRepository(StorageRepository repository){
+        this.repository=repository;
+    }
+	public StorageRepository getRepository(){
+		return repository;
+	}
+
+     public Student save(Student student) {
+
+        if (student == null || student.getName() == null) {
+            return null;
+        }
+        student.setId(getNextId());
+        repository.store(student);
+        return student;
+    }
+}
+ public static void main(String[] args){
+	// code to store in file 
+     StudentRepository fileRepositroy = new StudentRepository (new FileRepository());
+     fileRepositroy.save(new Student() );
+ 
+     // code to store in DataBase 
+     StudentRepository dbRepositroy = new StudentRepository(new DataBaseRepository());
+     dbRepositroy.save(new Student() );
+ }
