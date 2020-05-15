@@ -1,0 +1,27 @@
+class CharacterA is
+    // The template method defines the skeleton of an algorithm.
+    method turn() is
+        takeOrders()
+        placeOrders()
+        getPayment()
+        confirm()
+
+    method takeOrders() is
+        foreach (s in this.builtStructures) do
+            s.collect()
+
+    // defined as abstract.
+    abstract method placeOrders()
+    abstract method getPayment()
+
+    // A class can have several template methods.
+    method confirm() is
+        client = firstClient()
+        if (client == null)
+            checkAgain(queue.current)
+        else
+            skiptoNext(queue.next)
+
+    abstract method checkAgain(queue.current)
+    abstract method skiptoNext(position)
+
