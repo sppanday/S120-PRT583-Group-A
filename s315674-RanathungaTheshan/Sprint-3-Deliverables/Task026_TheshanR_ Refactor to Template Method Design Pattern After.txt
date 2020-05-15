@@ -1,4 +1,4 @@
-lass OrcsAI extends CharacterA is
+class OrcsAI extends CharacterA is
     method placeOrder() is
         if (there are some resources) then
 
