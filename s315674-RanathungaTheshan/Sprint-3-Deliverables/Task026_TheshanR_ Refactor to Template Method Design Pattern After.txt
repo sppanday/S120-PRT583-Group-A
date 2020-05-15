@@ -1,0 +1,24 @@
+lass OrcsAI extends CharacterA is
+    method placeOrder() is
+        if (there are some resources) then
+
+    method confirmOrder() is
+        if (there are plenty of orders) then
+            if (there are no orders)
+            else
+
+
+    method checkAgain(position) is
+        if (check.next > 0) then
+
+    method skiptoNext(position) is
+        if (skip.next > 1) then
+
+// Subclasses can also override some operations with a default
+// implementation.
+class MonstersAI extends CharacterA is
+    method takeOrders() 
+
+    method placeOrders() 
+
+    method getPayment() is
