@@ -55,7 +55,7 @@ namespace Task_031_Facade_Pattern.After
             }
         }
 
-        internal string allowAccess()
+        internal string allowAccess()Check
         {
             try {
                 if(this.generateUserSessionToken())
