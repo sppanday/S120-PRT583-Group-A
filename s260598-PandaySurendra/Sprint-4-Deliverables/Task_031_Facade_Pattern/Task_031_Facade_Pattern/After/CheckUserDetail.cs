@@ -6,7 +6,7 @@ namespace Task_031_Facade_Pattern.After
         private static string username = 'john@mail.com';
         private static string accountPassword = '&34%GHER';
 
-        public CheckUserDetail()
+        public CheckUserDetail(+g)
         {
         }
 

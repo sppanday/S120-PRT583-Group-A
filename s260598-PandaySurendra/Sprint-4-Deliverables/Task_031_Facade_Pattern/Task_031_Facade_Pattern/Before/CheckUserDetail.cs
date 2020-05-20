@@ -19,7 +19,7 @@ namespace Task_031_Facade_Pattern.Before
 
         CheckUserDetail()
         {
-           if (checkUsername)
+           if (checkUsername())
             {
                 return true;
             } else
